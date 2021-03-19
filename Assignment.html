@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Accenture Assignment</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    
+    
+  <link rel="stylesheet" type="text/css" href="Assignment.css">
+</head>
+<body>
+    <div class="inHead">
+        <img src="mtnLogo.jpg" alt="MTN" >
+    </div>
+  
+    <div class="inHead1"></div>   
+    <div class="topnav" id="myTopnav">
+        <a href="#home" class="active" style="margin-left: 180px;">Store</a>
+        <a href="#news">Product & Services</a>
+        <a href="#contact">Help & Support</a>
+        <a href="#search" id='search'><i class="fa fa-fw fa-search"></i> </a>
+    <div class="dropdown">
+            <button class="dropbtn">Personal
+              <i class="fa fa-caret-down"></i>
+            </button>
+            <div class="dropdown-content">
+              <a href="#">Link 1</a>
+              <a href="#">Link 2</a>
+              <a href="#">Link 3</a>
+            </div>
+          </div>
+        <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+          <i class="fa fa-bars"></i>
+        </a>
+      </div>
+      
+      <script>
+      function myFunction() {
+        var x = document.getElementById("myTopnav");
+        if (x.className === "topnav") {
+          x.className += " responsive";
+        } else {
+          x.className = "topnav";
+        }
+      }
+      </script>
+      
+    <div class="mainContainer">
+        <div class = "midContainer">
+            <div class="innerContainer"></div>
+            <div class="innerContainer1"></div>
+             <div class="innerContainer1"></div>
+             <div class="innerContainer1"></div>
+             <div class="innerContainer1"></div>
+             <div class="innerContainer1"></div>
+             <div class="innerContainer1"></div>
+             <div class="innerContainer1"></div>
+             <div class="innerContainer1"></div>
+             <div class="innerContainer1"></div>
+             <div class="innerContainer1"></div>
+             <div class="innerContainer1"></div>
+
+            
+<div class="card-carousel">
+  <div class="my-card">
+    <div class="cbody">Mobile Internet</div></div>
+  <div class="my-card">
+     <div class="cbody">Home Internet</div></div>
+ 
+  <div class="my-card">
+     <div class="cbody">Get a device<br> Start Here</div></div>
+  
+  <div class="my-card">
+     <div class="cbody">Add a <br>Phone-line</div></div>
+ 
+  <div class="my-card">
+     <div class="cbody">Upgrade</div>
+  </div>
+
+</div>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha384-tsQFqpEReu7ZLhBV2VZlAu7zcOV+rXbYlF2cqB8txI/8aZajjp4Bqd+V6D5IgvKT" crossorigin="anonymous"></script> 
+<script>
+
+
+  
+$num = $('.my-card').length;
+$even = $num / 2;
+$odd = ($num + 1) / 2;
+
+if ($num % 2 == 0) {
+  $('.my-card:nth-child(' + $even + ')').addClass('active');
+  $('.my-card:nth-child(' + $even + ')').prev().addClass('prev');
+  $('.my-card:nth-child(' + $even + ')').next().addClass('next');
+
+} else {
+  $('.my-card:nth-child(' + $odd + ')').addClass('active');
+  $('.my-card:nth-child(' + $odd + ')').prev().addClass('prev');
+  $('.my-card:nth-child(' + $odd + ')').next().addClass('next');
+}
+
+ $('.my-card').addClass('active');
+  $('.my-card').prev().addClass('prev');
+  $('.my-card').next().addClass('next');
+
+
+
+$('.my-card').click(function() {
+  $slide = $('.active').width();
+ console.log($('.active').position().left);
+  
+  if ($(this).hasClass('next')) {
+    $('.card-carousel').animate({left: '-=100px'});
+  } else if ($(this).hasClass('prev')) {
+    $('.card-carousel').animate({left: '+=100px' });
+  }
+  
+  $(this).removeClass('prev next');
+  //$(this).siblings();
+  
+  $(this).addClass('active');
+  $(this).prev().addClass('prev');
+  $(this).next().addClass('next');
+});
+
+
+// Keyboard nav
+$('html body').keydown(function(e) {
+  if (e.keyCode == 37) { // left
+    $('.active').prev().trigger('click');
+  }
+  else if (e.keyCode == 39) { // right
+    $('.active').next().trigger('click');
+  }
+});
+</script>
+</body>
+</html>
